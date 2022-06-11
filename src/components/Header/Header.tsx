@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-const Header = () => <div>header</div>
-
-export default Header;
-=======
 import Logo from "../Logo/Logo";
 import {AiOutlineWallet} from 'react-icons/ai'
 import {CgProfile} from 'react-icons/cg'
@@ -89,4 +84,3 @@ const Header = () => {
 };
 
 export default Header;
->>>>>>> Stashed changes
