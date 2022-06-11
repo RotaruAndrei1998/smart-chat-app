@@ -8,10 +8,11 @@ import ContractContext from "../../contexts/ContractContext/ContractContext";
 import UsersContext from "../../contexts/UsersContext/UsersContext";
 
 const Messages = () => {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<Array<MessageInterface>>([]);
   const { address, name, image } = useContext(UserContext);
   const { contract } = useContext(ContractContext);
   const { users } = useContext(UsersContext);
+  // @ts-ignore
   const getMessages = async () => {
     try {
       console.log("fetching messages from the blockchain..");
@@ -46,6 +47,7 @@ const Messages = () => {
         timestamp,
         message,
         messageType,
+        users,
         isMe,
       };
       setMessages((messages: Array<MessageInterface>) => [
