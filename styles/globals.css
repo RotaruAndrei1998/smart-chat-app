@@ -1,13 +1,12 @@
 @import "tailwindcss/base";
 
 @import "tailwindcss/components";
-
 /* Your own custom component styles */
 
 @import "tailwindcss/utilities";
 
-
-html, body, #__next {
-    height: 100%;
+html,
+body,
+#__next {
+  height: 100%;
 }
-
