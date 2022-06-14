@@ -19,7 +19,6 @@ const NavItem = (props: NavItemProps) => {
 
   const [isHover, setIsHover] = useState<boolean>(false);
 
-  console.log(isHover);
   return (
     <div
       onMouseOver={() => setIsHover(true)}

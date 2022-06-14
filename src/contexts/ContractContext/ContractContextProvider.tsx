@@ -24,7 +24,6 @@ const ContractContextProvider = ({ children }) => {
           contractABI,
           signer
         );
-        console.log(await signer.getAddress())
         setContract(smartChatContract);
       }
     } catch (e) {

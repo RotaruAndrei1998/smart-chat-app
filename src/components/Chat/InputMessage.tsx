@@ -15,18 +15,12 @@ const InputMessage = ({name}) => {
         return;
       }
 
-      console.log("sending message..");
-      console.log("type", messageType);
-      console.log("contract address", await contract.resolvedAddress);
       const sendMessageTxn = await contract.sendMessage(
         message,
         getMessageInt(messageType),
         { value: ethers.utils.parseEther(getAmmount(messageType)) }
       );
-      console.log(message, messageType);
       await sendMessageTxn.wait();
-
-      console.log("message sent!");
 
       setMessage("");
     } catch (error) {
