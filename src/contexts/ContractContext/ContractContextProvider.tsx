@@ -2,6 +2,7 @@ import abi from "../../utils/MyToken.json";
 import ContractContext from "./ContractContext";
 import { useEffect, useState } from "react";
 import { Contract, ethers } from "ethers";
+import InfoSection from "../../components/InfoSection/InfoSection";
 
 const contractAddress = "0xbc5644cCA2560d3cC11b12a95A255d966AC69495";
 const contractABI = abi.abi;
@@ -37,7 +38,7 @@ const ContractContextProvider = ({ children }) => {
 
   return (
     <ContractContext.Provider value={{ contract, contractAddress }}>
-      {contract ? children : <button onClick={connectToContract}>Connect to contract</button>}
+      {contract ? children : <InfoSection connectToContract={connectToContract}/>}
     </ContractContext.Provider>
   );
 };
