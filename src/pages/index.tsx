@@ -39,45 +39,6 @@ export default function Home() {
   const { address, name, image, isWalletConnected } = useContext(UserContext);
   const { users } = useContext(UsersContext);
 
-  // const sendMessage = async () => {
-  //   try {
-  //     const { ethereum } = window;
-  //
-  //     if (ethereum) {
-  //       const provider: Web3Provider = new ethers.providers.Web3Provider(
-  //         ethereum,
-  //         "any"
-  //       );
-  //       const signer: Signer = provider.getSigner();
-  //       const smartChatContract: Contract = new ethers.Contract(
-  //         contractAddress,
-  //         contractABI,
-  //         signer
-  //       );
-  //
-  //       console.log("sending message..");
-  //       console.log("type", messageType);
-  //       const sendMessageTxn = await smartChatContract.sendMessage(
-  //         message,
-  //         messageType,
-  //         { value: ethers.utils.parseEther(getAmmount(messageType)) }
-  //       );
-  //       console.log(message, messageType);
-  //       await sendMessageTxn.wait();
-  //
-  //       console.log("mined ", sendMessageTxn.hash);
-  //
-  //       console.log("coffee purchased!");
-  //
-  //       // Clear the form fields.
-  //       setName("");
-  //       setMessage("");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
   return (
     <div className="w-full h-full flex">
       <div className="w-3/4 bg-white flex flex-col">

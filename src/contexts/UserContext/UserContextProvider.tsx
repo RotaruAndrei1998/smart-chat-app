@@ -10,7 +10,6 @@ const UserContextProvider = ({ children }) => {
   const [name, setName] = useState(null);
   const [image, setImage] = useState(null);
   const { contract } = useContext(ContractContext);
-  console.log(account);
   const isWalletConnected = async () => {
     try {
       const { ethereum } = window;
@@ -18,13 +17,9 @@ const UserContextProvider = ({ children }) => {
       const accounts = await ethereum.request({ method: "eth_accounts" });
       if (accounts.length > 0) {
         const account = accounts[0];
-        console.log({ accounts });
         setAccount(account);
-        console.log("token id...");
         const tokenId = await contract.tokenOfOwnerByIndex(account, 0);
-        console.log("tokendataencoded... ", tokenId);
         const tokenDataEncoded = await contract.getTokenURI(tokenId);
-        console.log("data", tokenDataEncoded);
         const tokenDataDecoded = JSON.parse(
           atob(tokenDataEncoded.split("base64,")[1])
         );
@@ -45,7 +40,6 @@ const UserContextProvider = ({ children }) => {
       const { ethereum } = window;
 
       if (ethereum) {
-        console.log("creating account..", account);
         const createAccountTxn = await contract.safeMint(
           account,
           "Andrei Dev",
